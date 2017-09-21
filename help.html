@@ -1,0 +1,73 @@
+<html>
+<head>
+<link id="pagestyle" href="CSS/style2.css" type="TEXT/CSS" rel="stylesheet">
+<title>Help Page</title>
+<script>
+	function DisplayMessage()
+	{
+		var inputText = document.getElementById('myQuestion').value;
+		alert(inputText);
+	}
+	function UpdateStatusBar()
+	{
+		var obj = document.getElementById("StatusBar");
+		obj.innerHTML = Date.now();
+		<!-- document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; -->
+	}
+	function PageLoad()
+	{
+			var x = document.cookie;
+			x=document.cookie;
+			alert(x);
+			if (x == "Style=2") {
+				swapStyleSheet();
+			}
+	}
+	function swapStyleSheet(){
+		<!-- alert(document.getElementById('pagestyle').href) -->
+		sheet = document.getElementById('pagestyle').href
+		<!-- alert(document.getElementById('pagestyle').href) -->
+		if (sheet == "CSS/style.css") { 
+			document.cookie="style=2;expires=Thu, 01 Jan 2020 00:00:00 UTC";
+			sheet = "CSS/style2.css";
+		} else {
+			sheet = "CSS/style.css";
+			document.cookie="style=1;expires=Thu, 01 Jan 2020 00:00:00 UTC";
+		}
+		document.getElementById('pagestyle').setAttribute('href', sheet);
+		alert(document.cookie);
+	}
+</script>
+
+
+</head>
+<body onload="PageLoad()">
+
+<div id="heading">
+<h2>Help</h2>
+</div>
+
+<div id="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+</div>
+
+<div id="content">
+<h2>Help</h2>
+
+
+What is your problem? <input type='text' id="myQuestion">
+<button onClick="DisplayMessage()">Search</button>
+<p> Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p> 
+<p> Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
+<p> Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p> 
+<p> Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
+<p> Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p> 
+<button onClick="swapStyleSheet()">Style</button>
+<button onClick="UpdateStatusBar()">Click Me</button>
+</div>
+
+<div id="StatusBar">
+</div>
+</body>
+</html>
