@@ -16,8 +16,6 @@
     <author href="www.dulwich.org.uk" email="carrolls@dulwich.org.uk">
         Steven Carroll
     </author>
-	<plugin name="org.apache.cordova.contacts" />
-	<plugin name="org.apache.cordova.geolocation" />
     <icon src="Icon.png"/>
     <gap:splash src="Default.png"/>
 
